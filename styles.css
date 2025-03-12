@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.question {
+    margin: 20px 0;
+    font-size: 1.3em;
+}
+.options {
+    display: grid;
+    gap: 10px;
+}
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #45a049;
+}
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#result {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+#restart {
+    display: none;
+    margin: 20px auto;
+    background-color: #2196F3;
+    display: block;
+}
+#restart:hover {
+    background-color: #1976D2;
+}
+#high-scores {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+#high-scores h3 {
+    margin: 10px 0;
+    color: #555;
+}
+#high-scores-list {
+    list-style: none;
+    padding: 0;
+}
+#high-scores-list li {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+/* Pantalla de inicio */
+#start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transición de desvanecimiento */
+}
+#start-screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Evita interacción cuando está oculto */
+}
+#start-screen h1 {
+    font-size: 2.5em;
+    animation: slideAndColor 3s infinite;
+}
+#start-button {
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: #FF5722;
+}
+#start-button:hover {
+    background-color: #E64A19;
+}
+@keyframes slideAndColor {
+    0% {
+        transform: translateX(-100%);
+        color: #FF5722;
+    }
+    50% {
+        transform: translateX(0);
+        color: #2196F3;
+    }
+    100% {
+        transform: translateX(100%);
+        color: #4CAF50;
+    }
+}
+#game-content {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transición de desvanecimiento */
+}
+#game-content.visible {
+    opacity: 1;
+}

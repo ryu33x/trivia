@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Trivia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen">
+            <h1>¡Bienvenido a Trivia!</h1>
+            <button id="start-button" onclick="startGame()">Jugar</button>
+        </div>
+        <div id="game-content">
+            <h1>Juego de Trivia</h1>
+            <div class="stats">
+                <span>Puntaje: <span id="score">0</span></span>
+                <span>Nivel: <span id="level">1</span></span>
+                <span>Tiempo: <span id="timer">30</span>s</span>
+            </div>
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <div id="result"></div>
+            <button id="next" onclick="nextQuestion()" style="display: none;">Siguiente</button>
+            <button id="restart" onclick="restartGame()">Jugar de nuevo</button>
+            <div id="high-scores">
+                <h3>Mejores Puntajes</h3>
+                <ul id="high-scores-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
